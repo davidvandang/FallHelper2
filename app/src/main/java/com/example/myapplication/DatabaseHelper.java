@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         COL_DATE + " TEXT, " +
                         COL_TIME + " TEXT);";
         db.execSQL(query);
+
     }
 
     @Override
@@ -38,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    Cursor readAllData() {
+/*    Cursor readAllData() {
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db =  this.getReadableDatabase();
 
@@ -48,4 +51,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    void addCall(String date, String time){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COL_DATE, date);
+        cv.put(COL_TIME, time);
+        long result = db.insert(TABLE_NAME,null,cv);
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+        }
+
+    }*/
+
 }

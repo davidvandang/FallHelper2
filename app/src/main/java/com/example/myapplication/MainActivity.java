@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,9 +13,12 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
+    ArrayList<String> COL_ID, COL_DATE, COL_TIME;
 
 
 
@@ -58,5 +62,24 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        myDb = new DatabaseHelper(MainActivity.this);
+        COL_ID = new ArrayList<>();
+        COL_DATE = new ArrayList<>();
+        COL_TIME = new ArrayList<>();
+
+        storeDataInArrays();
+    }
+    void storeDataInArrays() {
+        Cursor cursor = myDb.readAllData();
+        if(cursor.getCount() == 0) {
+            Toast.makeText(this,"no data.", Toast.LENGTH_SHORT).show();
+        }else{
+            while (cursor.moveToNext()){
+                COL_ID.add(cursor.getString(0));
+                COL_DATE.add(cursor.getString(1));
+                COL_TIME.add(cursor.getString(2));
+
+            }
+        }
     }
 }
