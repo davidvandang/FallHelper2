@@ -23,18 +23,77 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button_center"
-            android:layout_width="400dp"
-            android:layout_height="200dp"
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:text="Home Address"
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text_addressAnswer"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="180dp"
-            android:background="@drawable/circular_button"
-            android:text="Setting Test"
-            android:textColor="#FFFFFF"
-            android:textSize="40sp"/>
+            android:gravity="center"
+            android:background="@drawable/rounded_rectangle_button2"
+            android:text=""
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/text_postcode"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="300dp"
+            android:gravity="center"
+            android:text="Postcode"
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text_postcodeAnswer"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="350dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_rectangle_button2"
+            android:text=""
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/text_timer"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="480dp"
+            android:gravity="center"
+            android:text="Call Timer"
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text_timerAnswer"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="530dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_rectangle_button2"
+            android:text=""
+            android:textColor="#116063"
+            android:textSize="30sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout
