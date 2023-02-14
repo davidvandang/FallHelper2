@@ -17,10 +17,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper myDb;
-    ArrayList<String> COL_ID, COL_DATE, COL_TIME;
-
-
 
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
@@ -29,11 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        setContentView(R.layout.activity_main);
-        myDb = new DatabaseHelper(this);
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -62,24 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        myDb = new DatabaseHelper(MainActivity.this);
-        COL_ID = new ArrayList<>();
-        COL_DATE = new ArrayList<>();
-        COL_TIME = new ArrayList<>();
 
-        storeDataInArrays();
     }
-    void storeDataInArrays() {
-        Cursor cursor = myDb.readAllData();
-        if(cursor.getCount() == 0) {
-            Toast.makeText(this,"no data.", Toast.LENGTH_SHORT).show();
-        }else{
-            while (cursor.moveToNext()){
-                COL_ID.add(cursor.getString(0));
-                COL_DATE.add(cursor.getString(1));
-                COL_TIME.add(cursor.getString(2));
 
-            }
-        }
-    }
 }
